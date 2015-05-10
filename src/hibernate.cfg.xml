@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Examen?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">examen</property>
+    <property name="hibernate.connection.password">examen</property>
+    <mapping resource="dani/java/examenm06uf4/model/Oficina.hbm.xml"/>
+    <mapping resource="dani/java/examenm06uf4/model/Empleat.hbm.xml"/>
+    <mapping resource="dani/java/examenm06uf4/model/Empresa.hbm.xml"/>
+    <mapping resource="dani/java/examenm06uf4/model/Director.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

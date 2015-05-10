@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 10, 2015 1:47:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dani.java.examenm06uf4.model.Empresa" table="Empresa" catalog="Examen" optimistic-lock="version">
+        <id name="cif" type="string">
+            <column name="cif" length="9" />
+            <generator class="assigned" />
+        </id>
+        <property name="nom" type="string">
+            <column name="nom" length="40" />
+        </property>
+        <property name="ong" type="java.lang.Boolean">
+            <column name="ong" />
+        </property>
+        <property name="telefon" type="string">
+            <column name="telefon" length="10" />
+        </property>
+        <property name="establiment" type="date">
+            <column name="establiment" length="10" />
+        </property>
+        <set name="empleats" table="Treball" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="cifEmpresa" length="9" not-null="true" />
+            </key>
+            <many-to-many entity-name="dani.java.examenm06uf4.model.Empleat">
+                <column name="dniEmpleat" length="9" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="oficinas" table="Oficina" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cifEmpresa" length="9" />
+            </key>
+            <one-to-many class="dani.java.examenm06uf4.model.Oficina" />
+        </set>
+        <one-to-one name="director" class="dani.java.examenm06uf4.model.Director"></one-to-one>
+    </class>
+</hibernate-mapping>

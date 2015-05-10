@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 10, 2015 1:47:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dani.java.examenm06uf4.model.Director" table="Director" catalog="Examen" optimistic-lock="version">
+        <id name="cifEmpresa" type="string">
+            <column name="cifEmpresa" length="9" />
+            <generator class="foreign">
+                <param name="property">empresa</param>
+            </generator>
+        </id>
+        <one-to-one name="empresa" class="dani.java.examenm06uf4.model.Empresa" constrained="true"></one-to-one>
+        <property name="dni" type="string">
+            <column name="dni" length="9" />
+        </property>
+        <property name="nom" type="string">
+            <column name="nom" length="20" />
+        </property>
+        <property name="cognoms" type="string">
+            <column name="cognoms" length="40" />
+        </property>
+        <property name="telefon" type="string">
+            <column name="telefon" length="10" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="40" />
+        </property>
+        <property name="salari" type="java.lang.Double">
+            <column name="salari" precision="8" />
+        </property>
+    </class>
+</hibernate-mapping>
